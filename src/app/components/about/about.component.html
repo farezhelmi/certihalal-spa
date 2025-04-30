@@ -1,0 +1,43 @@
+<!-- <section class="about-section" *ngIf="aboutData">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <div class="about-text text-center text-md-start">
+        <h2>{{ aboutData.title }}</h2>
+        <h4 class="text-muted">{{ aboutData.subtitle }}</h4>
+        <p>{{ aboutData.description }}</p>
+      </div>
+      <div class="about-image mt-4 mt-md-0">
+        <img [src]="aboutData.image" alt="About Image" class="img-fluid rounded" *ngIf="aboutData.image" />
+      </div>
+    </div>
+  </section> -->
+
+  <section class="about section" *ngIf="aboutData.length >= 3" id="about">
+    <div class="container">
+      <h2 class="section-title">{{ aboutData[0].heading }}</h2>
+      <p>{{ aboutData[0].content }}</p>
+      <div class="row">
+        <div class="col-md-6 about-image">
+          <div class="image-container">
+            <!-- <svg class="about-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48zm0 384c-97.2 0-176-78.8-176-176S158.8 80 256 80s176 78.8 176 176-78.8 176-176 176zm90.2-212.5c-6.5 6.5-17 6.5-23.4 0L256 153.9l-66.7 65.6c-6.5 6.5-17 6.5-23.4 0-6.5-6.5-6.5-17 0-23.4l78.4-77.1c6.5-6.5 17-6.5 23.4 0l78.4 77.1c6.4 6.4 6.4 16.9 0 23.4z" fill="#4caf50"/>
+              <path d="M346.2 219.5c-6.5 6.5-17 6.5-23.4 0L256 153.9l-66.7 65.6c-6.5 6.5-17 6.5-23.4 0-6.5-6.5-6.5-17 0-23.4l78.4-77.1c6.5-6.5 17-6.5 23.4 0l78.4 77.1c6.4 6.4 6.4 16.9 0 23.4z" fill="#4caf50"/>
+              <path d="M346.2 323.5c-6.5 6.5-17 6.5-23.4 0L256 257.9l-66.7 65.6c-6.5 6.5-17 6.5-23.4 0-6.5-6.5-6.5-17 0-23.4l78.4-77.1c6.5-6.5 17-6.5 23.4 0l78.4 77.1c6.4 6.4 6.4 16.9 0 23.4z" fill="#4caf50"/>
+            </svg> -->
+              <img src="{{ aboutData[0].image }}" alt="Halal Certification Training" class="about-icon">       
+          </div>
+        </div>
+        <div class="col-md-6 about-content">
+          <div class="about-mission">
+            <h3>{{ aboutData[1].heading }}</h3>
+            <p>{{ aboutData[1].content }}</p>
+          </div>
+          <div class="about-importance">
+            <h3>{{ aboutData[2].heading }}</h3>
+            <p>{{ aboutData[2].content }}</p>
+          </div>
+          <a href="#contact" class="btn-outline learn-more">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  

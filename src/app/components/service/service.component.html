@@ -1,0 +1,36 @@
+
+
+<section class="services section" id="services">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">At CertiHalal, we strive to provide tailored solutions designed to ensure Halal awareness and compliancy on an international level.</p>
+        
+        <div class="row">
+            <!-- <div *ngIf="services.length === 0">No services loaded</div> -->
+            <div class="col-md-6 col-lg-3" *ngFor="let service of services">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <!-- <i class="fas {{ service.icon }}"></i> -->
+                        <img [src]="'http://localhost:8000/' + service.icon" alt="{{ service.title }} icon" style="width: 50px; height: 50px;">
+                    </div>
+                    <h3 class="service-title">{{ service.title }}</h3>
+                    <p class="service-description">{{ service.description }}</p>
+                    <a href="#contact" class="service-link">Learn More</a>
+                </div>
+            </div>
+            <!-- <div class="col-md-6 col-lg-3">
+                <div class="service-card">
+                    <div class="service-icon">
+                    </div>
+                    <h3 class="service-title">test</h3>
+                    <p class="service-description">test</p>
+                    <a href="#contact" class="service-link">Learn More</a>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="#contact" class="btn-primary">Get Started Today</a>
+        </div>
+    </div>
+</section>

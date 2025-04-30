@@ -1,0 +1,21 @@
+<section class="why-choose-us section" id="why">
+    <div class="container">
+      <h2 class="section-title">Why Choose CertiHalal</h2>
+      <p class="section-subtitle">Whether you are an individual seeking personal certification or a business aiming to align with Halal practices, we offer the knowledge, expertise, and support you need to succeed.</p>
+      
+      <div class="row">
+        <div class="col-md-6 col-lg-3" *ngFor="let why of whys">
+          <div class="point-card">
+            <div class="point-icon">
+              <!-- <i class="fas {{ why.icon }}"></i> -->
+              <img [src]="'http://localhost:8000/' + why.icon" alt="{{ why.title }} icon" style="width: 50px; height: 50px;">
+            </div>
+            <h3 class="point-title">{{ why.title }}</h3>
+            <p class="point-description">{{ why.description }}</p>
+            <!-- <a [routerLink]="['/why-choose-us', point.id]" class="point-link">Learn More</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

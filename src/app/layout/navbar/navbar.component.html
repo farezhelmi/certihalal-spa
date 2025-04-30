@@ -1,0 +1,69 @@
+
+<!-- <div class="navbar-container">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="logo">
+        <a routerLink="/" class="brand-text text-decoration-none fs-3 fw-bold">CertiHalal</a>
+      </div>
+  
+      <div class="menu d-none d-md-flex align-items-center">
+        <app-menu></app-menu>
+        
+        <div class="ms-4">
+          <a routerLink="/register" class="btn btn-register">Register Now</a>
+        </div>
+        
+        <div class="admin-toolbar ms-2" *ngIf="isAdminLoggedIn">
+          <a routerLink="/admin" class="btn btn-sm btn-light">Admin</a>
+        </div>
+      </div>
+    </div>
+</div> -->
+
+<header class="header" [ngClass]="{'scrolled': isScrolled}">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="/">
+            <img class="logo-img" [src]="isScrolled ? darkLogo : lightLogo" alt="logo">
+            <h1>CertiHalal</h1>
+          </a>
+        </div>
+        
+        <nav class="main-nav" [ngClass]="{'open': isMobileMenuOpen}">
+            <ul class="nav-list">
+                <!-- <li *ngFor="let item of menuItems" class="nav-item">
+                    <a 
+                      [routerLink]="item.link.startsWith('#') ? null : item.link" 
+                      (click)="navigateToSection(item.link)"
+                      class="nav-link"
+                    >
+                      {{ item.name }}
+                    </a>
+                </li> -->
+                <li *ngFor="let menu of menus" class="nav-item">
+                    <!-- <a 
+                      [routerLink]="menu.url.startsWith('#') ? null : menu.url"
+                      (click)="navigateToSection(menu.url)"
+                      class="nav-link"
+                      routerLinkActive="active-link"
+                    > -->
+                    <a 
+                      href="javascript:void(0)"
+                      (click)="navigateToSection(menu.url)"
+                      class="nav-link"
+                    >
+                      {{ menu.title }}
+                    </a>
+                </li>
+            </ul>
+            <a href="#contact" class="btn-primary nav-cta">Register Now</a>
+        </nav>
+        
+        <div class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+          <span [ngClass]="{'open': isMobileMenuOpen}"></span>
+          <span [ngClass]="{'open': isMobileMenuOpen}"></span>
+          <span [ngClass]="{'open': isMobileMenuOpen}"></span>
+        </div>
+      </div>
+    </div>
+  </header>

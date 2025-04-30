@@ -1,0 +1,225 @@
+// .navbar-container {
+//     background-color: white;
+//     padding: 15px 0;
+//     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+//   }
+  
+//   .brand-text {
+//     color: #006400; // Dark green like in the image
+//     font-weight: 700;
+//   }
+  
+//   .container {
+//     max-width: 1200px;
+//     margin: 0 auto;
+//   }
+  
+//   .btn-register {
+//     background-color: #FFA500; // Orange color like in the image
+//     color: white;
+//     font-weight: 500;
+//     border-radius: 4px;
+//     padding: 8px 16px;
+//     border: none;
+    
+//     &:hover {
+//       background-color: darken(#FFA500, 5%);
+//       color: white;
+//     }
+//   }
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+    padding: 20px 0;
+    transition: var(--transition);
+    
+    &.scrolled {
+      background-color: var(--text-light);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+      
+      .logo h1 {
+        color: var(--primary-color);
+      }
+      
+      .nav-link {
+        color: var(--text-dark);
+        
+        &:hover {
+          color: var(--primary-color);
+        }
+      }
+
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none; // remove underline
+        color: inherit; // inherit color
+        gap: 10px;
+      }
+      
+      h1 {
+        color: var(--text-light);
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 0;
+        transition: var(--transition);
+      }
+
+      .logo-img {
+        width: 50px;
+        height: 50px;
+        transition: var(--transition);
+      }
+    }
+    
+    .main-nav {
+      display: flex;
+      align-items: center;
+      
+      .nav-list {
+        display: flex;
+        list-style: none;
+        margin: 0 20px 0 0;
+        padding: 0;
+      }
+      
+      .nav-item {
+        margin: 0 15px;
+      }
+      
+      .nav-link {
+        color: var(--text-light);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 5px 0;
+        transition: var(--transition);
+        position: relative;
+        
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: var(--primary-color);
+          transition: var(--transition);
+        }
+        
+        &:hover {
+          color: var(--primary-color);
+          
+          &:after {
+            width: 100%;
+          }
+        }
+      }
+      
+      .nav-cta {
+        text-decoration: none;
+        font-weight: 500;
+      }
+    }
+    
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      width: 30px;
+      cursor: pointer;
+      
+      span {
+        height: 3px;
+        width: 100%;
+        background-color: var(--text-light);
+        margin-bottom: 5px;
+        transition: var(--transition);
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+        
+        &.open {
+          &:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+          }
+          
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          
+          &:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+          }
+        }
+      }
+    }
+    
+    &.scrolled .mobile-menu-toggle span {
+      background-color: var(--text-dark);
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .header {
+      .mobile-menu-toggle {
+        display: flex;
+      }
+      
+      .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 80%;
+        max-width: 300px;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--text-light);
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        
+        &.open {
+          right: 0;
+        }
+        
+        .nav-list {
+          flex-direction: column;
+          width: 100%;
+          margin: 0 0 30px 0;
+        }
+        
+        .nav-item {
+          margin: 10px 0;
+          width: 100%;
+          text-align: center;
+        }
+        
+        .nav-link {
+          color: var(--text-dark);
+          display: block;
+          padding: 10px 0;
+          
+          &:hover {
+            color: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+  

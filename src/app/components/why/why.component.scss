@@ -1,0 +1,89 @@
+.why-choose-us {
+    background-color: white;
+    position: relative;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      width: 30%;
+      height: 100%;
+      right: 0;
+      top: 0;
+      background-color: var(--light-green);
+      z-index: 0;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+    }
+    
+    .container {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .point-card {
+      background-color: white;
+      border-radius: var(--border-radius);
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+      height: 100%;
+      
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        
+        .point-icon {
+          background-color: var(--primary-color);
+          color: white;
+        }
+      }
+      
+      .point-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        background-color: var(--light-green);
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        transition: var(--transition);
+      }
+      
+      .point-title {
+        font-size: 1.3rem;
+        color: var(--text-dark);
+        margin-bottom: 15px;
+      }
+      
+      .point-description {
+        color: #666;
+        line-height: 1.6;
+        text-align: justify;
+      }
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .why-choose-us {
+      &:before {
+        width: 20%;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%);
+      }
+      
+      .col-md-6 {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .why-choose-us {
+      &:before {
+        display: none;
+      }
+    }
+  }
+  

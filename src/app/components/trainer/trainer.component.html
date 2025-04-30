@@ -1,0 +1,23 @@
+<section class="trainers section" id="trainers">
+    <div class="container">
+      <h2 class="section-title">Meet Our Expert Trainers</h2>
+      <p class="section-subtitle">Learn from industry professionals with extensive experience in Halal certification and standards.</p>
+      
+      <div class="row">
+        <div class="col-md-4" *ngFor="let trainer of trainers">
+          <div class="trainer-card">
+            <div class="trainer-image">
+              <img [src]="'http://localhost:8000/' + trainer.photo_url" [alt]="trainer.name" class="img-fluid">
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name">{{ trainer.name }}</h3>
+              <p class="trainer-position">{{ trainer.designation }}</p>
+              <p class="trainer-bio">{{ trainer.bio }}</p>
+              <!-- <a [routerLink]="['/trainers', trainer.id]" class="trainer-link">View Profile</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

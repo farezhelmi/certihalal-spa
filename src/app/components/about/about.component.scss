@@ -1,0 +1,83 @@
+.about {
+    background-color: var(--bg-light);
+    position: relative;
+    
+    .about-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      
+      .image-container {
+        width: 100%;
+        max-width: 400px;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--light-green);
+        border-radius: 20px;
+        box-shadow: var(--box-shadow);
+      }
+      
+      .about-icon {
+        width: 200px;
+        height: 200px;
+      }
+    }
+    
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+      h3 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        color: var(--primary-color);
+      }
+      
+      p {
+        margin-bottom: 20px;
+        line-height: 1.6;
+        text-align: justify;
+        color: #555;
+      }
+      
+      .about-mission {
+        margin-bottom: 30px;
+      }
+      
+      .learn-more {
+        align-self: flex-start;
+        margin-top: 20px;
+        text-decoration: none;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .about {
+      .about-image {
+        margin-bottom: 40px;
+        
+        .image-container {
+          height: 300px;
+        }
+        
+        .about-icon {
+          width: 150px;
+          height: 150px;
+        }
+      }
+      
+      .about-content {
+        text-align: center;
+        
+        .learn-more {
+          align-self: center;
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,109 @@
+<section class="contact section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-subtitle">Get in touch with our team to learn more about our Halal certification training programs.</p>
+      
+      <div class="row">
+        <div class="col-lg-6 contact-info">
+          <div class="info-box">
+            <div class="info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info-content">
+              <h4>Our Address</h4>
+              <p>{{ footers.address }}</p>
+            </div>
+          </div>
+          
+          <div class="info-box">
+            <div class="info-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="info-content">
+              <h4>Call Us</h4>
+              <p>{{ footers.phone }}</p>
+            </div>
+          </div>
+          
+          <div class="info-box">
+            <div class="info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="info-content">
+              <h4>Email Us</h4>
+              <p>{{ footers.email }}</p>
+            </div>
+          </div>
+          
+          <div class="info-box">
+            <div class="info-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="info-content">
+              <h4>Working Hours</h4>
+              <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 contact-form">
+          <!-- <form [formGroup]="contactForm" (ngSubmit)="onSubmit()"> -->
+            <form (ngSubmit)="submitContactForm()" [formGroup]="contactForm" class="contact-form">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input 
+                    type="text" 
+                    id="name" 
+                    formControlName="name" 
+                    class="form-control" 
+                  >
+                  <!-- <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                    <div *ngIf="f['name'].errors['required']">Name is required</div>
+                    <div *ngIf="f['name'].errors['minlength']">Name must be at least 2 characters</div>
+                  </div> -->
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Your Email</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    formControlName="email" 
+                    class="form-control" 
+                  >
+                  <!-- <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                    <div *ngIf="f['email'].errors['required']">Email is required</div>
+                    <div *ngIf="f['email'].errors['email']">Please enter a valid email address</div>
+                  </div> -->
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Your Message</label>
+                  <textarea 
+                    id="message" 
+                    formControlName="message" 
+                    class="form-control" 
+                    rows="5"
+                  ></textarea>
+                  <!-- <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
+                    <div *ngIf="f['message'].errors['required']">Message is required</div>
+                    <div *ngIf="f['message'].errors['minlength']">Message must be at least 10 characters</div>
+                  </div> -->
+                </div>
+
+                <div class="alert alert-success">
+                    {{ successMessage }}
+                </div>
+
+                <!-- <div class="alert alert-danger" *ngIf="submitError">
+                  There was an error sending your message. Please try again later.
+                </div> -->
+
+                <button type="submit" class="btn-primary submit-btn">
+                  Send Message
+                </button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </section>

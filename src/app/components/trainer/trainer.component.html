@@ -7,7 +7,8 @@
         <div class="col-md-4" *ngFor="let trainer of trainers">
           <div class="trainer-card">
             <div class="trainer-image">
-              <img [src]="'http://localhost:8000/' + trainer.photo_url" [alt]="trainer.name" class="img-fluid">
+              <!-- <img [src]="'http://localhost:8000/' + trainer.photo_url" [alt]="trainer.name" class="img-fluid"> -->
+              <img [src]="apiBaseUrl + '/' + trainer.photo_url" [alt]="trainer.name" class="img-fluid">
             </div>
             <div class="trainer-info">
               <h3 class="trainer-name">{{ trainer.name }}</h3>

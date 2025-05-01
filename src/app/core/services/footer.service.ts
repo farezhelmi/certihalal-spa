@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 
 export interface FooterSection {
@@ -19,11 +20,13 @@ export interface FooterSection {
   providedIn: 'root'
 })
 export class FooterService {
-  private apiUrl = 'http://localhost:8000/api/footer-sections';
+  // private apiUrl = 'http://localhost:8000/api/footer-sections';
+  private apiUrl = `${environment.apiBaseUrl}/footer-sections`;
 
   constructor(private http: HttpClient) { }
-    
-  getFooters(): Observable<FooterSection[]> {
-    return this.http.get<FooterSection[]>(this.apiUrl);
+  
+  // return single value
+  getFooter(): Observable<FooterSection> {
+    return this.http.get<FooterSection>(this.apiUrl);
   }
 }

@@ -5,10 +5,11 @@ import { AboutComponent } from "../../../components/about/about.component";
 import { ServiceComponent } from "../../../components/service/service.component";
 import { TrainerComponent } from "../../../components/trainer/trainer.component";
 import { WhyComponent } from "../../../components/why/why.component";
+import { ContactSubmissionComponent } from "../../../components/contact-submission/contact-submission.component";
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, HeroComponent, AboutComponent, ServiceComponent, TrainerComponent, WhyComponent],
+  imports: [CommonModule, HeroComponent, AboutComponent, ServiceComponent, TrainerComponent, WhyComponent, ContactSubmissionComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

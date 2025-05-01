@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 
 export interface WhySection {
@@ -14,7 +15,8 @@ export interface WhySection {
   providedIn: 'root'
 })
 export class WhyService {
-  private apiUrl = 'http://localhost:8000/api/why-sections';
+  // private apiUrl = 'http://localhost:8000/api/why-sections';
+  private apiUrl = `${environment.apiBaseUrl}/why-sections`;
   
     constructor(private http: HttpClient) { }
   

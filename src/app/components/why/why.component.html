@@ -8,7 +8,8 @@
           <div class="point-card">
             <div class="point-icon">
               <!-- <i class="fas {{ why.icon }}"></i> -->
-              <img [src]="'http://localhost:8000/' + why.icon" alt="{{ why.title }} icon" style="width: 50px; height: 50px;">
+              <!-- <img [src]="'http://localhost:8000/' + why.icon" alt="{{ why.title }} icon" style="width: 50px; height: 50px;"> -->
+              <img [src]="apiBaseUrl + '/' + why.icon" alt="{{ why.title }} icon" style="width: 50px; height: 50px;">
             </div>
             <h3 class="point-title">{{ why.title }}</h3>
             <p class="point-description">{{ why.description }}</p>

@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { environment } from "../../../environments/environment";
 import { Observable } from "rxjs";
 
 // define the data structure
@@ -15,7 +16,8 @@ export interface MenuItem {
     providedIn: 'root',
 })
 export class MenuService {
-    private apiUrl = 'http://localhost:8000/api/menus';
+    // private apiUrl = 'http://localhost:8000/api/menus';
+    private apiUrl = `${environment.apiBaseUrl}/menus`;
 
     constructor(private http: HttpClient) {}
 

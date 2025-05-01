@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 
 export interface HeroSection {
@@ -15,7 +16,8 @@ export interface HeroSection {
   providedIn: 'root'
 })
 export class HeroService {
-  private apiUrl = 'http://localhost:8000/api/hero-sections';
+  // private apiUrl = 'http://localhost:8000/api/hero-sections';
+  private apiUrl = `${environment.apiBaseUrl}/hero-sections`;
 
   constructor(private http: HttpClient) { }
 

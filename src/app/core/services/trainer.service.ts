@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 
 export interface TrainerSection {
@@ -16,7 +17,8 @@ export interface TrainerSection {
 })
 export class TrainerService {
 
-  private apiUrl = 'http://localhost:8000/api/trainer-sections';
+  // private apiUrl = 'http://localhost:8000/api/trainer-sections';
+  private apiUrl = `${environment.apiBaseUrl}/trainer-sections`;
 
   constructor(private http: HttpClient) { }
 

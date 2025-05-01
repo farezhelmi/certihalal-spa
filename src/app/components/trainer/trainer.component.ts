@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TrainerService, TrainerSection } from '../../core/services/trainer.service';
 import { NgFor } from '@angular/common';
-
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-trainer',
@@ -11,6 +11,7 @@ import { NgFor } from '@angular/common';
 })
 export class TrainerComponent implements OnInit {
   trainers: TrainerSection[] = [];
+  apiBaseUrl = environment.apiBaseUrl;
 
   constructor(private trainerService: TrainerService) {}
 

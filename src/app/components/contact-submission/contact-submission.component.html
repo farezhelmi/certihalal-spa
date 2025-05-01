@@ -5,13 +5,13 @@
       
       <div class="row">
         <div class="col-lg-6 contact-info">
-          <div class="info-box">
+          <div class="info-box" >
             <div class="info-icon">
               <i class="fas fa-map-marker-alt"></i>
             </div>
             <div class="info-content">
               <h4>Our Address</h4>
-              <p>{{ footers.address }}</p>
+              <p>{{ footer?.address }}</p>
             </div>
           </div>
           
@@ -21,7 +21,7 @@
             </div>
             <div class="info-content">
               <h4>Call Us</h4>
-              <p>{{ footers.phone }}</p>
+              <p>{{ footer?.phone }}</p>
             </div>
           </div>
           
@@ -31,7 +31,7 @@
             </div>
             <div class="info-content">
               <h4>Email Us</h4>
-              <p>{{ footers.email }}</p>
+              <p>{{ footer?.email }}</p>
             </div>
           </div>
           
@@ -56,11 +56,13 @@
                     id="name" 
                     formControlName="name" 
                     class="form-control" 
+                    [ngClass]="{'is-invalid': contactForm.get('name')?.invalid && (contactForm.get('name')?.dirty || contactForm.get('name')?.touched)}"
+                    placeholder="Enter your name"
                   >
-                  <!-- <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
-                    <div *ngIf="f['name'].errors['required']">Name is required</div>
-                    <div *ngIf="f['name'].errors['minlength']">Name must be at least 2 characters</div>
-                  </div> -->
+                  <div class="invalid-feedback" *ngIf="contactForm.get('name')?.invalid && (contactForm.get('name')?.dirty || contactForm.get('name')?.touched)">
+                    <div *ngIf="contactForm.get('name')?.errors?.['required']">Name is required</div>
+                    <div *ngIf="contactForm.get('name')?.errors?.['minlength']">Name must be at least 2 characters</div>
+                  </div>
                 </div>
 
                 <div class="form-group">
@@ -70,11 +72,13 @@
                     id="email" 
                     formControlName="email" 
                     class="form-control" 
+                    [ngClass]="{'is-invalid': contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)}"
+                    placeholder="Enter your email"
                   >
-                  <!-- <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
-                    <div *ngIf="f['email'].errors['required']">Email is required</div>
-                    <div *ngIf="f['email'].errors['email']">Please enter a valid email address</div>
-                  </div> -->
+                  <div class="invalid-feedback" *ngIf="contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)">
+                    <div *ngIf="contactForm.get('email')?.errors?.['required']">Email is required</div>
+                    <div *ngIf="contactForm.get('email')?.errors?.['email']">Please enter a valid email address</div>
+                  </div>
                 </div>
 
                 <div class="form-group">
@@ -84,23 +88,32 @@
                     formControlName="message" 
                     class="form-control" 
                     rows="5"
+                    [ngClass]="{'is-invalid': contactForm.get('message')?.invalid && (contactForm.get('message')?.dirty || contactForm.get('message')?.touched)}"
+                    placeholder="Enter your message"
                   ></textarea>
-                  <!-- <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
-                    <div *ngIf="f['message'].errors['required']">Message is required</div>
-                    <div *ngIf="f['message'].errors['minlength']">Message must be at least 10 characters</div>
-                  </div> -->
+                  <div class="invalid-feedback" *ngIf="contactForm.get('message')?.invalid && (contactForm.get('message')?.dirty || contactForm.get('message')?.touched)">
+                    <div *ngIf="contactForm.get('message')?.errors?.['required']">Message is required</div>
+                    <div *ngIf="contactForm.get('message')?.errors?.['minlength']">Message must be at least 10 characters</div>
+                  </div>
                 </div>
 
-                <div class="alert alert-success">
+                <div class="alert alert-success" *ngIf="successMessage">
                     {{ successMessage }}
                 </div>
 
-                <!-- <div class="alert alert-danger" *ngIf="submitError">
-                  There was an error sending your message. Please try again later.
-                </div> -->
+                <div class="alert alert-danger" *ngIf="errorMessage">
+                    {{ errorMessage }}
+                </div>
 
-                <button type="submit" class="btn-primary submit-btn">
-                  Send Message
+                <button 
+                    type="submit" 
+                    class="btn btn-primary submit-btn"
+                    [disabled]="!contactForm.valid || isSubmitting"
+                  >
+                    <span *ngIf="!isSubmitting">Send Message</span>
+                    <span *ngIf="isSubmitting">
+                      <i class="fas fa-spinner fa-spin"></i> Sending...
+                    </span>
                 </button>
             </form>
         </div>

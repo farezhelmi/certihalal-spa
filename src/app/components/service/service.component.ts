@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ServiceService, ServiceSection } from '../../core/services/service.service';
+import { environment } from '../../../environments/environment';
 // import { NgFor } from '@angular/common';
 
 @Component({
@@ -12,6 +13,7 @@ import { ServiceService, ServiceSection } from '../../core/services/service.serv
 })
 export class ServiceComponent implements OnInit {
   services: ServiceSection[] = [];
+  apiBaseUrl = environment.apiBaseUrl;
 
   constructor(private serviceService: ServiceService) {}
 

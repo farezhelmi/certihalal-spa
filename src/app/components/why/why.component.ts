@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WhyService, WhySection } from '../../core/services/why.service';
 import { CommonModule } from '@angular/common';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-why',
@@ -9,7 +10,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './why.component.scss'
 })
 export class WhyComponent implements OnInit {
-  whys: WhySection [] = [];
+  whys: WhySection[] = [];
+  apiBaseUrl = environment.apiBaseUrl;
 
   constructor(private whyService: WhyService) {}
 

@@ -5,6 +5,7 @@ import { Router, RouterLink } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MenuService, MenuItem } from '../../core/services/menu.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-navbar',
@@ -15,8 +16,10 @@ import { MenuService, MenuItem } from '../../core/services/menu.service';
 export class NavbarComponent {
   // private http = inject(HttpClient);
   menus: MenuItem[] = [];
-  lightLogo = 'http://localhost:8000/storage/logo/logo.png';
-  darkLogo = 'http://localhost:8000/storage/logo/logo2.png';
+  // lightLogo = 'http://localhost:8000/storage/logo/logo.png';
+  // darkLogo = 'http://localhost:8000/storage/logo/logo2.png';
+  lightLogo = `${environment.apiBaseUrl}/storage/logo/logo.png`;
+  darkLogo = `${environment.apiBaseUrl}/storage/logo/logo2.png`;
   isScrolled = false;
   isMobileMenuOpen = false;
   isAdminLoggedIn: boolean = false; // Later replace with AuthService logic
